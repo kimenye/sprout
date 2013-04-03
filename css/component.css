@@ -211,5 +211,6 @@
     .og-grid li > a,
     .og-grid li > a img {
         width: 250px;
+        height: 250px;
     }
 }

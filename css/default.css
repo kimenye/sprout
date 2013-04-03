@@ -61,11 +61,6 @@ a {
     text-align: center;
 }
 
-.container > footer {
-    text-align: center;
-}
-
-.container > footer h1,
 .container > header h1 {
     font-size: 34px;
     line-height: 38px;
@@ -74,23 +69,12 @@ a {
     color: #90278E;
 }
 
-.container > footer h1 span,
 .container > header h1 span {
     display: block;
     font-size: 20px;
     font-weight: 300;
     line-height: 28px;
     padding-top: 10px;
-}
-
-.container > footer h1 span {
-    font-size: 14px;
-    color: #999999;
-}
-
-
-.container > footer {
-    margin-top: 100px;
 }
 
 .main > p {
