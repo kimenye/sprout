@@ -10,7 +10,8 @@
     display: inline-block;
     margin: 10px 5px 0 5px;
     vertical-align: top;
-    height: 250px;
+    /*height: 250px;*/
+    height: 150px;
 }
 
 .og-grid li > a,
@@ -19,6 +20,12 @@
     outline: none;
     display: block;
     position: relative;
+    width: 150px;
+}
+
+.og-grid li.og-expanded > a > img,
+.og-grid li > a:hover,
+.og-grid li > a:hover img {
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
     border-radius: 5px;
 }
@@ -194,4 +201,16 @@
     .og-fullimg { display: none; }
     .og-details { float: none; width: 100%; }
 
+}
+
+@media screen and (max-width: 480px) {
+    .og-grid li {
+        height: 250px;
+    }
+
+    .og-grid li > a,
+    .og-grid li > a img {
+        width: 250px;
+        height: 250px;
+    }
 }
