@@ -36,7 +36,8 @@ $special = $event.special.debouncedresize = {
             dispatch() :
             resizeTimeout = setTimeout( dispatch, $special.threshold );
     },
-    threshold: 250
+//    threshold: 250
+    threshold: 150
 };
 
 // ======================= imagesLoaded Plugin ===============================
