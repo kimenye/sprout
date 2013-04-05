@@ -1,5 +1,4 @@
-/* General Demo Style */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+/* General Style */
 
 html { height: 100%; }
 
@@ -46,19 +45,26 @@ a {
 .container {
     width: 100%;
     position: relative;
+    
 }
 
-.container > header {
-    width: 90%;
-    max-width: 1240px;
+/*.container > header {
+    width: 100%;
+    max-width: 1540px;
     margin: 0 auto;
     position: relative;
     padding: 0 30px 50px 30px;
-}
+    
+}*/
 
 .container > header {
-    padding: 60px 30px 50px;
-    text-align: center;
+width: 100%;
+max-width: 1540px;
+margin: 0 auto;
+position: relative;
+padding: 45px 20% 30px;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(231,230,232,1)), color-stop(0%,rgba(255,255,255,0)));
+/*    text-align: center;*/
 }
 
 .container > header h1 {
@@ -82,8 +88,25 @@ a {
     padding: 50px 20px;
 }
 
+.logo{
+	float: left;
+	margin-right: 10px;
+	width: 240px;
+	height: 275px;
+	position: relative;
+}
+
+.header-right{
+/*	background-color: #abc000;*/
+	height: 100px;
+	float: left;
+	margin-right: 10px;
+	width:50%;
+	height: 275px;
+	position: relative;
+}
 /* Header Style */
-.codrops-top {
+/*.codrops-top {
     line-height: 24px;
     font-size: 11px;
     background: #fff;
@@ -113,4 +136,4 @@ a {
 .codrops-top span.right a {
     float: left;
     display: block;
-}
+}*/
