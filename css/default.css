@@ -48,14 +48,14 @@ a {
     
 }
 
-.container > header {
+/*.container > header {
     width: 100%;
     max-width: 1540px;
     margin: 0 auto;
     position: relative;
     padding: 0 30px 50px 30px;
     
-}
+}*/
 
 .container > header {
 width: 100%;
@@ -63,7 +63,7 @@ max-width: 1540px;
 margin: 0 auto;
 position: relative;
 /*pleaase remember to put back the padding after returning the header*/
-padding: 45px 20% 30px;
+padding: 25px 5% 30px;
 background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(231,230,232,1)), color-stop(0%,rgba(255,255,255,0)));
 /*    text-align: center;*/
 }
@@ -75,20 +75,26 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
     font-weight: 700;
     color: #90278E;
     width: 100%;
+    float: left;
 }
 
 .container > header h1 span {
-    display: block;
-    font-size: 0.7em;
+/*    display: block;*/
+    font-size: 1em;
     font-weight: 100;
     line-height: 40px;
     float: left;
+    margin: 0px 0px 0px 15px;
 /*    padding-top: 10px;*/
+}
+
+.container > header h1 img{
+	float: left;
 }
 
 .container > header h1{
 	display: inline-block;
-	font-size: 0.7 em;
+/*	font-size: em;*/
 	font-weight: 100;
 /*	line-height: 60px ;*/
 }
