@@ -202,6 +202,7 @@
 
     .og-fullimg { display: none; }
     .og-details { float: none; width: 100%; }
+    .container img {display: none;}
 
 }
 
@@ -216,4 +217,6 @@
         width: 250px;
         height: 250px;
     }
+    
+    
 }

@@ -48,14 +48,14 @@ a {
     
 }
 
-/*.container > header {
+.container > header {
     width: 100%;
     max-width: 1540px;
     margin: 0 auto;
     position: relative;
     padding: 0 30px 50px 30px;
     
-}*/
+}
 
 .container > header {
 width: 100%;
@@ -63,7 +63,7 @@ max-width: 1540px;
 margin: 0 auto;
 position: relative;
 /*pleaase remember to put back the padding after returning the header*/
-/*padding: 45px 20% 30px;*/
+padding: 45px 20% 30px;
 background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(231,230,232,1)), color-stop(0%,rgba(255,255,255,0)));
 /*    text-align: center;*/
 }
@@ -74,14 +74,23 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
     margin: 0 auto;
     font-weight: 700;
     color: #90278E;
+    width: 100%;
 }
 
 .container > header h1 span {
     display: block;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 28px;
-    padding-top: 10px;
+    font-size: 0.7em;
+    font-weight: 100;
+    line-height: 40px;
+    float: left;
+/*    padding-top: 10px;*/
+}
+
+.container > header h1{
+	display: inline-block;
+	font-size: 0.7 em;
+	font-weight: 100;
+/*	line-height: 60px ;*/
 }
 
 .main > p {
@@ -92,9 +101,9 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
 .logo{
 	float: left;
 	margin-right: 10px;
-	width: 240px;
+	width: 40%;
 	height: 275px;
-	position: relative;
+/*	position: relative;*/
 }
 
 .header-right{
@@ -104,6 +113,8 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
 	margin-right: 10px;
 	width:50%;
 	height: 275px;
-	position: relative;
+/*	position: relative;*/
 }
+
+
 /* Header Style */
