@@ -126,6 +126,11 @@
     margin-bottom: 10px;
 }
 
+.og-details h3 > small {
+    font-size: 22px;
+    display: block;
+}
+
 .og-details p {
     font-weight: 400;
     font-size: 16px;

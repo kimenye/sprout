@@ -1,5 +1,5 @@
 /* General Style */
-@import url(http://fonts.googleapis.com/css?family=Lato:100,400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,700);
 
 html { height: 100%; }
 
@@ -121,4 +121,8 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
 	width:50%;
 	height: 275px;
 /*	position: relative;*/
+}
+
+.slides {
+    display: none;
 }

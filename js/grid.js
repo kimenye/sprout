@@ -361,10 +361,15 @@ var Grid = (function() {
                     title : $itemEl.data( 'title' ),
                     type: $itemEl.data('type'),
                     cta: typeof $itemEl.data('cta') == 'undefined' ? "Let's Talk" : $itemEl.data('cta'),
+                    subtitle: $itemEl.data('subtitle'),
                     description : $itemEl.data( 'description' )
                 };
 
-            this.$title.html( eldata.title );
+            if (typeof eldata.subtitle == 'undefined')
+                this.$title.html( eldata.title );
+            else
+                this.$title.html( eldata.title + "<small>" + eldata.subtitle + "</small>");
+
             this.$description.html( eldata.description );
             this.$href.attr( 'href', eldata.href );
             this.$href.html(eldata.cta);
