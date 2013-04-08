@@ -190,11 +190,18 @@
     66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
 }
 
+@media screen and (max-width: 1500px){
+
+.container > header h1 span { margin: 90px 0px 0px 15px;}
+
+}
+
 @media screen and (max-width: 830px) {
 
     .og-expander h3 { font-size: 32px; }
     .og-expander p { font-size: 13px; }
     .og-expander a { font-size: 12px; }
+/*	.container > header h1 span { margin: 90px 0px 0px 15px;}*/
 
 }
 
@@ -202,6 +209,17 @@
 
     .og-fullimg { display: none; }
     .og-details { float: none; width: 100%; }
+    header img {display: none;}
+/*    .container > header h1 span { margin: 10px 0px 0px 15px;}*/
+
+}
+
+@media screen and (max-width: 885px) {
+
+    .og-fullimg { display: none; }
+    .og-details { float: none; width: 100%; }
+/*    header img {display: none;}*/
+    .container > header h1 span { margin: 10px 0px 0px 15px;}
 
 }
 
@@ -216,4 +234,6 @@
         width: 250px;
         height: 250px;
     }
+    
+    
 }
