@@ -162,7 +162,7 @@ $.fn.imagesLoaded = function( callback ) {
 };
 
 var Grid = (function() {
-
+    $('ul li').not('.fixed').shuffle();
     // list of items
     var $grid = $( '#og-grid' ),
     // the items
@@ -197,6 +197,7 @@ var Grid = (function() {
         };
 
     function init( config ) {
+        $('.og-grid.hidden,.main.og-loading').toggleClass('hidden');
 
         // the settings..
         settings = $.extend( true, {}, settings, config );
