@@ -15,6 +15,15 @@
     </head>
     <body>
         <div class="container">
+        	<header class="slide_area">
+        		<ul id="slides">
+        		  <li><h2>This is the one</h2><img src="images/example-slide-1.jpg"></li>
+        		  <li><img src="images/Mac-Classic.png"></li>
+        		  <li><img src="images/example-slide-3.jpg"></li>
+        		  <li><img src="images/example-slide-4.jpg"></li>
+        		</ul>
+        	
+        	</header>
             <!--<header class="clearfix">
                 <div class="logo"><img src="images/Mac-Classic.png" alt="" /></div>
                 <div class="header-right">
@@ -94,13 +103,37 @@
                 <!--<h1><span>Sprout Consulting (K) Ltd, Copyright &copy; 2013</span></h1>-->
             <!--</footer>-->
         </div>
-<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-        <script src="js/jquery.1.7.2.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--        <script src="js/jquery.1.7.2.js"></script>-->
+
+		<script src="js/jquery.slides.min.js"></script>
         <script src="js/grid.js"></script>
         <script>
             $(function() {
                 Grid.init();
             });
         </script>
+        <script>
+            $(function() {
+              $('#slides').slidesjs({
+                width: 900,
+                height: 200,
+                controls: {false},
+                play: {auto: true,
+                  interval: 4000,},
+//                navigation: {
+//                  effect: "fade"
+//                },
+//                pagination: {
+//                  effect: "fade"
+//                },
+//                effect: {
+//                  fade: {
+//                    speed: 400
+//                  }
+//                }
+              });
+            });
+          </script>
     </body>
 </html>

@@ -106,4 +106,12 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
 	height: 275px;
 	position: relative;
 }
-/* Header Style */
+/* header slider */
+.container .slide_area {
+      margin: 0 auto;
+      background-color: #ff0000;
+    }
+    
+ .container .slidesjs-pagination .active {
+       color:red;
+     }
