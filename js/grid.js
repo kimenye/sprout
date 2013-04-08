@@ -375,7 +375,7 @@ var Grid = (function() {
             this.$href.html(eldata.cta);
 
             if (eldata.type == "promo") {
-                //we are in a promo so the link should open in a new windo
+                //we are in a promo so the link should open in a new window
                 this.$href.attr('target', '_blank');
             }
 
@@ -385,20 +385,39 @@ var Grid = (function() {
             if( typeof self.$largeImg != 'undefined' ) {
                 self.$largeImg.remove();
             }
+            //remove any slides if visible
+            $('.slides.visible-slide').remove();
 
+            var hasSlider = this.$item.children('a').children('div.slides').length > 0;
             // preload large image and add it to the preview
             // for smaller screens we don´t display the large image (the media query will hide the fullimage wrapper)
             if( self.$fullimage.is( ':visible' ) ) {
                 this.$loading.show();
-                $( '<img/>' ).load( function() {
-                    var $img = $( this );
-                    if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
-                        self.$loading.hide();
-                        self.$fullimage.find( 'img' ).remove();
-                        self.$largeImg = $img.fadeIn( 350 );
-                        self.$fullimage.append( self.$largeImg );
-                    }
-                } ).attr( 'src', eldata.largesrc );
+                if (!hasSlider) {
+                    $( '<img/>' ).load( function() {
+                        var $img = $( this );
+                        if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
+                            self.$loading.hide();
+                            self.$fullimage.find( 'img' ).remove();
+                            self.$largeImg = $img.fadeIn( 350 );
+                            self.$fullimage.append( self.$largeImg );
+                        }
+                    } ).attr( 'src', eldata.largesrc );
+                }
+                else {
+                    //create a slider
+                    var div = this.$item.find('div.og-fullimg')[0];
+                    this.$loading.hide();
+                    var slides = $(this.$item.find('div.slides')[0]).clone();
+                    $(slides).appendTo($(div));
+                    $(slides).addClass('visible-slide');
+                    $(slides).slidesjs({
+                        navigation: {
+                            active: true,
+                            effect: "slide"
+                        }
+                    });
+                }
             }
 
         },

@@ -126,3 +126,26 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
 .slides {
     display: none;
 }
+
+.slides > .slidesjs-navigation {
+    position: relative;
+}
+
+
+.slides > .slidesjs-previous {
+    float: left;
+}
+
+.slides > .slidesjs-next {
+    float: right;
+}
+
+.slides li.slidesjs-pagination-item {
+    margin: 0;
+    height: inherit;
+}
+
+.og-grid li.slidesjs-pagination-item > a {
+    width: auto;
+    padding-right: 5px;
+}
