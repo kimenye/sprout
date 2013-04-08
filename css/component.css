@@ -196,6 +196,18 @@
 
 }
 
+@media screen and (max-width: 885px) {
+
+    .og-fullimg { display: none; }
+    .og-details { float: none; width: 100%; }
+/*    header img {display: none;}*/
+    .container > header h1 span { margin: 90px 0px 0px 15px;
+    	width: 53%;
+    }
+ 
+
+}
+
 @media screen and (max-width: 830px) {
 
     .og-expander h3 { font-size: 32px; }
@@ -209,21 +221,43 @@
 
     .og-fullimg { display: none; }
     .og-details { float: none; width: 100%; }
-    header img {display: none;}
+/*    header img {display: none;}*/
 /*    .container > header h1 span { margin: 10px 0px 0px 15px;}*/
 
 }
 
-@media screen and (max-width: 885px) {
+@media screen and (max-width: 610px) {
 
-    .og-fullimg { display: none; }
-    .og-details { float: none; width: 100%; }
-/*    header img {display: none;}*/
-    .container > header h1 span { margin: 10px 0px 0px 15px;}
+    .container > header h1 span {
+    	margin: 53px 0px 0px 15px; 
+    	width: 45%;
+    }
+    header img { 
+        	margin-left: -30px;
+        	/*width: 65%;		*/
+    	}
+    
+
+}
+
+@media screen and (max-width: 516px) {
+
+    header img { 
+    	margin-left: -40px;
+    	/*width: 35%;	*/
+        bottom: 3px;
+        left: 3px;
+
+	}
 
 }
 
 @media screen and (max-width: 480px) {
+	header img {display: none;}
+    .container > header h1 span {
+        margin: 0px 0px 0px 15px; 
+        width: 96%;
+    }
     .og-grid li {
         height: 250px;
 /*        width: 250px;*/
