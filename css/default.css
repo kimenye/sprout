@@ -143,11 +143,30 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
 }
 
 .slides li.slidesjs-pagination-item {
-    margin: 0;
     height: inherit;
 }
 
+.slidesjs-pagination,
+.slides > .slidesjs-navigation {
+    margin-top: 5px;
+}
+
+.slidesjs-pagination li {
+    margin: 0 1px;
+}
+
 .og-grid li.slidesjs-pagination-item > a {
-    width: auto;
     padding-right: 5px;
+    display: block;
+    width: 13px;
+    height: 0;
+    padding-top: 13px;
+    background-image: url(../images/pagination.png);
+    background-position: 0 0;
+    float: left;
+    overflow: hidden;
+}
+
+.slidesjs-pagination li a.active, .slidesjs-pagination li a:hover.active {
+    background-position: 0 -13px;
 }
