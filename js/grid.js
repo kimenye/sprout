@@ -321,7 +321,7 @@ var Grid = (function() {
             // create Preview structure:
             this.$title = $( '<h3></h3>' );
             this.$description = $( '<p></p>' );
-            this.$href = $( '<a href="#">Lets Talk</a>' );
+            this.$href = $( '<a href="#"></a>' );
             this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
             this.$loading = $( '<div class="og-loading"></div>' );
             this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
@@ -359,12 +359,20 @@ var Grid = (function() {
                     href : $itemEl.attr( 'href' ),
                     largesrc : $itemEl.data( 'largesrc' ),
                     title : $itemEl.data( 'title' ),
+                    type: $itemEl.data('type'),
+                    cta: typeof $itemEl.data('cta') == 'undefined' ? "Let's Talk" : $itemEl.data('cta'),
                     description : $itemEl.data( 'description' )
                 };
 
             this.$title.html( eldata.title );
             this.$description.html( eldata.description );
             this.$href.attr( 'href', eldata.href );
+            this.$href.html(eldata.cta);
+
+            if (eldata.type == "promo") {
+                //we are in a promo so the link should open in a new windo
+                this.$href.attr('target', '_blank');
+            }
 
             var self = this;
 
