@@ -98,11 +98,16 @@
 
 .og-fullimg,
 .og-details {
-    width: 50%;
+    width: 30%;
     float: left;
     height: 100%;
     overflow: hidden;
     position: relative;
+}
+
+.og-fullimg{
+
+    width: 64%;
 }
 
 .og-details {
@@ -121,7 +126,7 @@
 
 .og-details h3 {
     font-weight: 300;
-    font-size: 52px;
+    font-size: 40px;
     padding: 40px 0 10px;
     margin-bottom: 10px;
 }
@@ -235,10 +240,10 @@
 
     .container > header h1 span {
     	margin: 53px 0px 0px 15px; 
-    	width: 45%;
+    	width: 49%;
     }
     header img { 
-        	margin-left: -30px;
+        	margin-left: -25px;
         	/*width: 65%;		*/
     	}
     
@@ -246,6 +251,11 @@
 }
 
 @media screen and (max-width: 516px) {
+
+    .container > header h1 span {
+        width: 50%;
+        font-size: 0.9em;
+    }
 
     header img { 
     	margin-left: -40px;
@@ -260,6 +270,7 @@
 @media screen and (max-width: 480px) {
 	header img {display: none;}
     .container > header h1 span {
+        font-size: 1em;
         margin: 0px 0px 0px 15px; 
         width: 96%;
     }
