@@ -130,45 +130,63 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
 }
 
 .slides > .slidesjs-navigation {
-    position: relative;
+    position: absolute;
+    top: 40%;
+    z-index: 100;
+    height: 45px;
+    width: 45px;
 }
 
-
 .slides > .slidesjs-previous {
-    float: left;
+    left: -5px;
 }
 
 .slides > .slidesjs-next {
-    float: right;
+    right: 10px;
 }
 
-.slides li.slidesjs-pagination-item {
-    height: inherit;
+.slidesjs-navigation:hover::before,
+.slidesjs-navigation:hover::after {
+    background: rgba(231,230,232,1);
 }
 
-.slidesjs-pagination,
-.slides > .slidesjs-navigation {
-    margin-top: 5px;
+.slidesjs-previous:after,
+.slidesjs-previous:before,
+.slidesjs-next:after,
+.slidesjs-next:before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: #fff;
 }
 
-.slidesjs-pagination li {
-    margin: 0 1px;
+.slidesjs-previous:after {
+    top: 0;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    transform: rotate(135deg);
 }
 
-.og-grid li.slidesjs-pagination-item > a {
-    padding-right: 5px;
-    display: block;
-    width: 13px;
-    height: 0;
-    padding-top: 13px;
-    background-image: url(../images/pagination.png);
-    background-position: 0 0;
-    float: left;
-    overflow: hidden;
+.slidesjs-previous:before {
+    top: 15px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    transform: rotate(-135deg);
 }
 
-.slidesjs-pagination li a.active, .slidesjs-pagination li a:hover.active {
-    background-position: 0 -13px;
+.slidesjs-next:after {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.slidesjs-next:before {
+    top: 15px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .hidden {

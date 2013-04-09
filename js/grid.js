@@ -413,9 +413,17 @@ var Grid = (function() {
                     $(slides).appendTo($(div));
                     $(slides).addClass('visible-slide');
                     $(slides).slidesjs({
+                        pagination: {
+                            active: false
+                        },
                         navigation: {
                             active: true,
                             effect: "slide"
+                        },
+                        callback: {
+                            loaded: function(number) {
+                                $('.slidesjs-navigation').html('');
+                            }
                         }
                     });
                 }
