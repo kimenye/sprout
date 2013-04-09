@@ -1,5 +1,5 @@
 /* General Style */
-@import url(http://fonts.googleapis.com/css?family=Lato:100,400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,700);
 
 /*@import*/
 
@@ -123,4 +123,58 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
 	width:50%;
 	height: 275px;
 /*	position: relative;*/
+}
+
+.slides {
+    display: none;
+}
+
+.slides > .slidesjs-navigation {
+    position: relative;
+}
+
+
+.slides > .slidesjs-previous {
+    float: left;
+}
+
+.slides > .slidesjs-next {
+    float: right;
+}
+
+.slides li.slidesjs-pagination-item {
+    height: inherit;
+}
+
+.slidesjs-pagination,
+.slides > .slidesjs-navigation {
+    margin-top: 5px;
+}
+
+.slidesjs-pagination li {
+    margin: 0 1px;
+}
+
+.og-grid li.slidesjs-pagination-item > a {
+    padding-right: 5px;
+    display: block;
+    width: 13px;
+    height: 0;
+    padding-top: 13px;
+    background-image: url(../images/pagination.png);
+    background-position: 0 0;
+    float: left;
+    overflow: hidden;
+}
+
+.slidesjs-pagination li a.active, .slidesjs-pagination li a:hover.active {
+    background-position: 0 -13px;
+}
+
+.hidden {
+    display: none;
+}
+
+.main.og-loading {
+    margin-top: 300px;
 }

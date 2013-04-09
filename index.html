@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Sprout Consulting - A digital agency making useful stuff out of the internet for" />
         <meta name="keywords" content="sprout, consulting, digital, agency, apps, websites" />
-        <meta name="author" content="Codrops" />
+        <meta name="author" content="Sprout" />
         <title>Sprout Consulting - Making Useful Stuff from the Internet</title>
         <script src="js/modernizr.custom.js"></script>
 
@@ -18,18 +18,19 @@
             <header class="clearfix">
                 <!--<div class="logo"><img src="images/Mac-Classic.png" alt="" /></div>
                 <div class="header-right">-->
-                <h1><img src="images/Mac-Classic.png" /><span><strong>Sprout.</strong><br /> we make useful stuff from the internet</span></h1>
+                <h1><img src="images/Mac-Classic.png" /><span><strong>sprout.</strong><br /> we make useful stuff from the internet</span></h1>
                 	<!--<img src="images/logo.png" />
                 	<h1>making useful stuff out of the internet</h1>-->
             </header>
             <div class="main">
-                <ul id="og-grid" class="og-grid">
-                    <li>
+                <div class="main og-loading"></div>
+                <ul id="og-grid" class="og-grid hidden">
+                    <li class="fixed">
                         <a href="mailto:robot@sprout.co.ke" data-cta="Our Location" data-type="about-us" data-largesrc="images/about_us.png" data-title="We are Sprout" data-description="We are Nairobi's freshest digital agency, we believe in making useful stuff from the internet. We play at the sweet spot between Design, Technology, Business & Culture.">
                             <img src="images/thumbs/logo_thumb.png" alt="about Sprout" title="Click to send us an email"/>
                         </a>
                     </li>
-                    <li>
+                    <li class="fixed">                        
                         <a href="mailto:robot@sprout.co.ke" data-type="normal" data-largesrc="images/fly_now.png" data-title="Fly now" data-description=" The all powerful phone, know how it feels to have to leave your phone to do something as simple as find a flight to Mombasa, Now with Flynow you can Find, Book and Check in all from your mobile device ">
                             <img src="images/thumbs/fly_now_thumb.png" alt="Mobile Apps" title="Click to see more about Fly Now"/>
                         </a>
@@ -70,8 +71,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://guide.tivi.co.ke" data-cta="Check it Out" data-type="promo" data-largesrc="images/content_strategy.png" data-title="Content Strategy" data-description="Take a bite of the conversation. Content is King, and we work with you clients to develop rich and engaging content that helps your brand remain relevant with its target audience.">
-                            <img src="images/thumbs/tivi_thumb.gif" alt="Content Strategy" title="Click to see more about how to develop your content strategy"/>
+                        <a href="http://guide.tivi.co.ke" data-cta="Check it Out" data-type="promo" data-largesrc="images/content_strategy.png" data-title="TIVI" data-subtitle="Kenyan TV Guide" data-description="Take a bite of the conversation. Content is King, and we work with you clients to develop rich and engaging content that helps your brand remain relevant with its target audience.">
+                            <img src="images/thumbs/tivi_thumb.gif" alt="Content Strategy" title="Click to find out more about tivi"/>
+
+                            <div class="slides">
+                                <img src="images/example-slide-1.jpg" />
+                                <img src="images/example-slide-2.jpg" />
+                                <img src="images/example-slide-3.jpg" />
+                                <img src="images/example-slide-4.jpg" />
+                            </div>
                         </a>
                     </li>
                     <li>
@@ -113,10 +121,21 @@
                 <!--<h1><span>Sprout Consulting (K) Ltd, Copyright &copy; 2013</span></h1>-->
             <!--</footer>-->
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<!--        <script src="js/jquery.1.7.2.js"></script>-->
+        <!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+        <script src="js/jquery.1.9.1.js"></script>
 		<script src="js/jquery.slides.min.js"></script>
+		<script src="js/jquery.shuffle.min.js"></script>
         <script src="js/grid.js"></script>
+        <!--<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39952469-1', 'sprout.co.ke');
+            ga('send', 'pageview');
+        </script>
         <script>
             $(function() {
                 Grid.init();
