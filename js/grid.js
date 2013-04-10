@@ -370,14 +370,11 @@ var Grid = (function() {
                     description : $itemEl.data( 'description' )
                 };
             var hasSlider = this.$item.children('a').children('div.slides').length > 0;
-            var largeScreen = this.$fullimage.is( ':visible' );
 
-            if (!hasSlider) {
-                if (isEmpty(eldata.subtitle))
-                    this.$title.html( eldata.title );
-                else
-                    this.$title.html( eldata.title + "<small>" + eldata.subtitle + "</small>");
-            }
+            if (isEmpty(eldata.subtitle))
+                this.$title.html( eldata.title );
+            else
+                this.$title.html( eldata.title + "<small>" + eldata.subtitle + "</small>");
 
             this.$description.html( '<p>' + eldata.description + '</p>');
             this.$href.attr( 'href', eldata.href );
