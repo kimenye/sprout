@@ -161,6 +161,10 @@ $.fn.imagesLoaded = function( callback ) {
     return deferred ? deferred.promise( $this ) : $this;
 };
 
+function isEmpty(vr){
+    return typeof vr == 'undefined'
+}
+
 var Grid = (function() {
     $('ul li').not('.fixed').shuffle();
     // list of items
@@ -321,7 +325,7 @@ var Grid = (function() {
         create : function() {
             // create Preview structure:
             this.$title = $( '<h3></h3>' );
-            this.$description = $( '<p></p>' );
+            this.$description = $( '<div></div>' );
             this.$href = $( '<a href="#"></a>' );
             this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
             this.$loading = $( '<div class="og-loading"></div>' );
@@ -371,7 +375,7 @@ var Grid = (function() {
             else
                 this.$title.html( eldata.title + "<small>" + eldata.subtitle + "</small>");
 
-            this.$description.html( eldata.description );
+            this.$description.html( '<p>' + eldata.description + '</p>');
             this.$href.attr( 'href', eldata.href );
             this.$href.html(eldata.cta);
 
