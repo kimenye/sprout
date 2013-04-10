@@ -161,6 +161,10 @@ $.fn.imagesLoaded = function( callback ) {
     return deferred ? deferred.promise( $this ) : $this;
 };
 
+function isEmpty(vr){
+    return typeof vr == 'undefined'
+}
+
 var Grid = (function() {
     $('ul li').not('.fixed').shuffle();
     // list of items
@@ -321,7 +325,7 @@ var Grid = (function() {
         create : function() {
             // create Preview structure:
             this.$title = $( '<h3></h3>' );
-            this.$description = $( '<p></p>' );
+            this.$description = $( '<div></div>' );
             this.$href = $( '<a href="#"></a>' );
             this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
             this.$loading = $( '<div class="og-loading"></div>' );
@@ -365,13 +369,14 @@ var Grid = (function() {
                     subtitle: $itemEl.data('subtitle'),
                     description : $itemEl.data( 'description' )
                 };
+            var hasSlider = this.$item.children('a').children('div.slides').length > 0;
 
-            if (typeof eldata.subtitle == 'undefined')
+            if (isEmpty(eldata.subtitle))
                 this.$title.html( eldata.title );
             else
                 this.$title.html( eldata.title + "<small>" + eldata.subtitle + "</small>");
 
-            this.$description.html( eldata.description );
+            this.$description.html( '<p>' + eldata.description + '</p>');
             this.$href.attr( 'href', eldata.href );
             this.$href.html(eldata.cta);
 
@@ -389,7 +394,7 @@ var Grid = (function() {
             //remove any slides if visible
             $('.slides.visible-slide').remove();
 
-            var hasSlider = this.$item.children('a').children('div.slides').length > 0;
+
             // preload large image and add it to the preview
             // for smaller screens we don´t display the large image (the media query will hide the fullimage wrapper)
             if( self.$fullimage.is( ':visible' ) ) {
@@ -407,8 +412,9 @@ var Grid = (function() {
                 }
                 else {
                     //create a slider
+                    console.log("To load slider");
                     var div = this.$item.find('div.og-fullimg')[0];
-                    this.$loading.hide();
+                    this.$loading.show();
                     var slides = $(this.$item.find('div.slides')[0]).clone();
                     $(slides).appendTo($(div));
                     $(slides).addClass('visible-slide');
@@ -422,7 +428,17 @@ var Grid = (function() {
                         },
                         callback: {
                             loaded: function(number) {
+                                console.log("Loaded slides");
+                                self.$loading.hide();
                                 $('.slidesjs-navigation').html('');
+                                var slide = $(slides.find("img")[0]);
+                                self.$title.html( eldata.title + "<small>" + slide.data("subtitle") + "</small>");
+                                self.$description.html( '<p>' + slide.data("description") + '</p>');
+                            },
+                            complete: function(number) {
+                                var slide = $(slides.find("img")[number-1]);
+                                self.$title.html( eldata.title + "<small>" + slide.data("subtitle") + "</small>");
+                                self.$description.html( '<p>' + slide.data("description") + '</p>');
                             }
                         }
                     });
