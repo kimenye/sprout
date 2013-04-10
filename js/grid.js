@@ -367,6 +367,7 @@ var Grid = (function() {
                     title : $itemEl.data( 'title' ),
                     type: $itemEl.data('type'),
                     custom: $itemEl.data('custom'),
+                    init: $itemEl.data('init'),
                     cta: typeof $itemEl.data('cta') == 'undefined' ? "Let's Talk" : $itemEl.data('cta'),
                     subtitle: $itemEl.data('subtitle'),
                     description : $itemEl.data( 'description' )
@@ -420,6 +421,12 @@ var Grid = (function() {
                         var div = this.$item.find('div.og-fullimg')[0];
                         var customDiv = $('#' + eldata.custom).clone();
                         $(customDiv).appendTo($(div));
+
+                        var fn = window[eldata.init];
+                        if (typeof fn == "function") {
+                            fn();
+                        }
+
                         self.$loading.hide();
                     }
                 }
