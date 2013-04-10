@@ -1,0 +1,32 @@
+#faces{
+    width: 500px;
+    height:333px;
+    margin: 0 auto;
+}
+
+#faces img {
+    max-width: inherit;
+    max-height: inherit;
+}
+
+
+#faces .the_faces{
+    height: 333px;
+    width: 14.2857143%;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+
+#the_faces_overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+}
+
+#face-area{
+    width: 333px;
+    position: relative;
+}

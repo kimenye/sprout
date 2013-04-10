@@ -351,6 +351,7 @@ var Grid = (function() {
                 var $currentItem = $items.eq( current );
                 $currentItem.removeClass( 'og-expanded' );
                 this.$item.addClass( 'og-expanded' );
+                $currentItem.find('.custom').remove();
                 // position the preview correctly
                 this.positionPreview();
             }
@@ -365,11 +366,14 @@ var Grid = (function() {
                     largesrc : $itemEl.data( 'largesrc' ),
                     title : $itemEl.data( 'title' ),
                     type: $itemEl.data('type'),
+                    custom: $itemEl.data('custom'),
+                    init: $itemEl.data('init'),
                     cta: typeof $itemEl.data('cta') == 'undefined' ? "Let's Talk" : $itemEl.data('cta'),
                     subtitle: $itemEl.data('subtitle'),
                     description : $itemEl.data( 'description' )
                 };
             var hasSlider = this.$item.children('a').children('div.slides').length > 0;
+            var isCustom = !isEmpty(eldata.custom);
 
             if (isEmpty(eldata.subtitle))
                 this.$title.html( eldata.title );
@@ -400,15 +404,31 @@ var Grid = (function() {
             if( self.$fullimage.is( ':visible' ) ) {
                 this.$loading.show();
                 if (!hasSlider) {
-                    $( '<img/>' ).load( function() {
-                        var $img = $( this );
-                        if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
-                            self.$loading.hide();
-                            self.$fullimage.find( 'img' ).remove();
-                            self.$largeImg = $img.fadeIn( 350 );
-                            self.$fullimage.append( self.$largeImg );
+                    if (!isCustom) {
+                        $( '<img/>' ).load( function() {
+                            var $img = $( this );
+                            if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
+                                self.$loading.hide();
+                                self.$fullimage.find( 'img' ).remove();
+                                self.$largeImg = $img.fadeIn( 350 );
+                                self.$fullimage.append( self.$largeImg );
+                            }
+                        } ).attr( 'src', eldata.largesrc );
+                    } else {
+                        //its a custom div
+                        self.$loading.hide();
+                        self.$fullimage.find( 'img' ).remove();
+                        var div = this.$item.find('div.og-fullimg')[0];
+                        var customDiv = $('#' + eldata.custom).clone();
+                        $(customDiv).appendTo($(div));
+
+                        var fn = window[eldata.init];
+                        if (typeof fn == "function") {
+                            fn();
                         }
-                    } ).attr( 'src', eldata.largesrc );
+
+                        self.$loading.hide();
+                    }
                 }
                 else {
                     //create a slider
