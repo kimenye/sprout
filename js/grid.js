@@ -369,11 +369,15 @@ var Grid = (function() {
                     subtitle: $itemEl.data('subtitle'),
                     description : $itemEl.data( 'description' )
                 };
+            var hasSlider = this.$item.children('a').children('div.slides').length > 0;
+            var largeScreen = this.$fullimage.is( ':visible' );
 
-            if (typeof eldata.subtitle == 'undefined')
-                this.$title.html( eldata.title );
-            else
-                this.$title.html( eldata.title + "<small>" + eldata.subtitle + "</small>");
+            if (!hasSlider) {
+                if (isEmpty(eldata.subtitle))
+                    this.$title.html( eldata.title );
+                else
+                    this.$title.html( eldata.title + "<small>" + eldata.subtitle + "</small>");
+            }
 
             this.$description.html( '<p>' + eldata.description + '</p>');
             this.$href.attr( 'href', eldata.href );
@@ -393,7 +397,7 @@ var Grid = (function() {
             //remove any slides if visible
             $('.slides.visible-slide').remove();
 
-            var hasSlider = this.$item.children('a').children('div.slides').length > 0;
+
             // preload large image and add it to the preview
             // for smaller screens we don´t display the large image (the media query will hide the fullimage wrapper)
             if( self.$fullimage.is( ':visible' ) ) {
@@ -427,6 +431,14 @@ var Grid = (function() {
                         callback: {
                             loaded: function(number) {
                                 $('.slidesjs-navigation').html('');
+                                var slide = $(slides.find("img")[0]);
+                                self.$title.html( eldata.title + "<small>" + slide.data("subtitle") + "</small>");
+                                self.$description.html( '<p>' + slide.data("description") + '</p>');
+                            },
+                            complete: function(number) {
+                                var slide = $(slides.find("img")[number-1]);
+                                self.$title.html( eldata.title + "<small>" + slide.data("subtitle") + "</small>");
+                                self.$description.html( '<p>' + slide.data("description") + '</p>');
                             }
                         }
                     });
