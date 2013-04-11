@@ -432,36 +432,39 @@ var Grid = (function() {
                 }
                 else {
                     //create a slider
-                    console.log("To load slider");
                     var div = this.$item.find('div.og-fullimg')[0];
+                    if (isEmpty(div)) {
+                        div = this.$fullimage;
+                    }
                     this.$loading.show();
                     var slides = $(this.$item.find('div.slides')[0]).clone();
-                    $(slides).appendTo($(div));
-                    $(slides).addClass('visible-slide');
-                    $(slides).slidesjs({
-                        pagination: {
-                            active: false
-                        },
-                        navigation: {
-                            active: true,
-                            effect: "slide"
-                        },
-                        callback: {
-                            loaded: function(number) {
-                                console.log("Loaded slides");
-                                self.$loading.hide();
-                                $('.slidesjs-navigation').html('');
-                                var slide = $(slides.find("img")[0]);
-                                self.$title.html( eldata.title + "<small>" + slide.data("subtitle") + "</small>");
-                                self.$description.html( '<p>' + slide.data("description") + '</p>');
+                    setTimeout(function() {
+                        $(slides).appendTo($(div));
+                        $(slides).addClass('visible-slide');
+                        $(slides).slidesjs({
+                            pagination: {
+                                active: false
                             },
-                            complete: function(number) {
-                                var slide = $(slides.find("img")[number-1]);
-                                self.$title.html( eldata.title + "<small>" + slide.data("subtitle") + "</small>");
-                                self.$description.html( '<p>' + slide.data("description") + '</p>');
+                            navigation: {
+                                active: true,
+                                effect: "slide"
+                            },
+                            callback: {
+                                loaded: function(number) {
+                                    self.$loading.hide();
+                                    $('.slidesjs-navigation').html('');
+                                    var slide = $(slides.find("img")[0]);
+                                    self.$title.html( eldata.title + "<small>" + slide.data("subtitle") + "</small>");
+                                    self.$description.html( '<p>' + slide.data("description") + '</p>');
+                                },
+                                complete: function(number) {
+                                    var slide = $(slides.find("img")[number-1]);
+                                    self.$title.html( eldata.title + "<small>" + slide.data("subtitle") + "</small>");
+                                    self.$description.html( '<p>' + slide.data("description") + '</p>');
+                                }
                             }
-                        }
-                    });
+                        });
+                    },500);
                 }
             }
 
