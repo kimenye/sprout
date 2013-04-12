@@ -166,7 +166,7 @@ function isEmpty(vr){
 }
 
 var Grid = (function() {
-    $('ul li').not('.fixed').shuffle();
+//    $('ul li').not('.fixed').shuffle();
     // list of items
     var $grid = $( '#og-grid' ),
     // the items
