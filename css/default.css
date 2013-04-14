@@ -62,11 +62,9 @@ a {
 
 .container > header {
     width: 100%;
-    max-width: 1540px;
+    /*max-width: 1540px;*/
     margin: 0 auto;
     position: relative;
-    /*pleaase remember to put back the padding after returning the header*/
-    padding: 25px 5% 30px;
     background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(231,230,232,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(231,230,232,1))); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(231,230,232,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -91,7 +89,7 @@ a {
     font-size: 1em;
     font-weight: 100;
     line-height: 40px;
-    float: left;
+    /*float: left;*/
     /*margin: 0px 0px 0px 15px;*/
     display: none;
 /*    padding-top: 10px;*/
