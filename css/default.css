@@ -66,7 +66,7 @@ max-width: 1540px;
 margin: 0 auto;
 position: relative;
 /*pleaase remember to put back the padding after returning the header*/
-padding: 25px 5% 30px;
+/*padding: 25px 5% 30px;*/
 background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(231,230,232,1)), color-stop(0%,rgba(255,255,255,0)));
 /*    text-align: center;*/
 }
@@ -78,7 +78,7 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
     font-weight: 700;
     color: #90278E;
     width: 100%;
-    float: left;
+    text-align: center;
 }
 
 .container > header h1 span {
@@ -87,12 +87,13 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba
     font-weight: 100;
     line-height: 40px;
     float: left;
-    margin: 0px 0px 0px 15px;
+    /*margin: 0px 0px 0px 15px;*/
+    display: none;
 /*    padding-top: 10px;*/
 }
 
 .container > header h1 img{
-	float: left;
+	width: 180px;
 }
 
 .container > header h1{

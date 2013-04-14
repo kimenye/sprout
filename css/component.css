@@ -207,7 +207,7 @@
 
 @media screen and (max-width: 1500px){
 
-.container > header h1 span { margin: 90px 0px 0px 15px;}
+/*.container > header h1 span { margin: 90px 0px 0px 15px;}*/
 
 }
 
@@ -216,8 +216,8 @@
     .og-fullimg { display: none; }
     .og-details { float: none; width: 100%; }
 /*    header img {display: none;}*/
-    .container > header h1 span { margin: 90px 0px 0px 15px;
-    	width: 53%;
+    /*.container > header h1 span { margin: 90px 0px 0px 15px;*/
+    	/*width: 53%;*/
     }
  
 
@@ -247,8 +247,8 @@
     	margin: 53px 0px 0px 15px; 
     	width: 49%;
     }
-    header img { 
-        	margin-left: -25px;
+    /*header img { */
+        	/*margin-left: -25px;*/
         	/*width: 65%;		*/
     	}
     
@@ -273,21 +273,24 @@
 }
 
 @media screen and (max-width: 480px) {
-	header img {display: none;}
-    .container > header h1 span {
-        font-size: 1em;
+	/*header img {display: none;}*/
+    /*.container > header h1 span {*/
+        /*font-size: 1em;
         margin: 0px 0px 0px 15px; 
-        width: 96%;
+        width: 96%;*/
+        .og-grid li {
+        height: 150px;
+/*        width: 250px;*/
     }
     .og-grid li {
-        height: 250px;
+        height: 195px;
 /*        width: 250px;*/
     }
 
     .og-grid li > a,
     .og-grid li > a img {
-        width: 250px;
-        height: 250px;
+        width: 195px;
+        height: 195px;
     }
 
     .main.og-loading {
