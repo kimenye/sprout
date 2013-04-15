@@ -28,7 +28,7 @@
                 	
             </header>
             <div class="main">
-                <div class="main og-loading"></div>
+                <div class="main og-loading"><p>Loading...</p></div>
                 <ul id="og-grid" class="og-grid hidden">
                     <li class="fixed">
                         <a href="mailto:robot@sprout.co.ke" data-cta="Let's Talk" data-type="about-us" data-largesrc="images/about_us.png" data-title="We are Sprout" data-description="We are Nairobi's freshest Digital and Technology agency. At Sprout we believe digital isn’t just about building our clients websites and helping them tweet. It’s about weaving the golden thread across traditional and new media, crafting a complete journey that always keeps the business goals in sight. <br /><br /> We believe in making useful stuff from the internet. We bring together Design, Technology, Business & Culture to deliver results.">
@@ -118,7 +118,7 @@
                         <!--</a>-->
                     <!--</li>-->
                 </ul>
-                <p>
+                <p class="about hidden">
                     Sprout  &copy; 2013  |  No. 8 Downhill court Riara Lane, off Riara rd.
                 </p>
             </div>
@@ -190,6 +190,7 @@
         <script>
             $(function() {
                 Grid.init();
+                $('.about.hidden').toggleClass('hidden');
             });
         </script>
     </body>
