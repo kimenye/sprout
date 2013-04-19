@@ -369,6 +369,7 @@ var Grid = (function() {
                     custom: $itemEl.data('custom'),
                     init: $itemEl.data('init'),
                     cta: typeof $itemEl.data('cta') == 'undefined' ? "Let's Talk" : $itemEl.data('cta'),
+                    href: $itemEl.data('url'),
                     subtitle: $itemEl.data('subtitle'),
                     description : $itemEl.data( 'description' )
                 };
